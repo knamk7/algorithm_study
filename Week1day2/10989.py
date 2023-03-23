@@ -1,11 +1,11 @@
 N = int(input())
-li = [0]*10000
-index = 1
+li = [0]*10001
+element = 1
 
 for i in range(N):
-    li[int(input())-1] += 1
+    li[int(input())] += 1
 
 for i in li:
     for j in range(i):
-        print(index)
-    index += 1
+        print(element)
+    element += 1
