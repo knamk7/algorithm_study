@@ -1,9 +1,11 @@
 N = int(input())
-li = list()
-for i in range(N):
-    li.append(int(input()))
+li = [0]*10000
+index = 1
 
-li.sort()
+for i in range(N):
+    li[int(input())-1] += 1
 
 for i in li:
-    print(i)
+    for j in range(i):
+        print(index)
+    index += 1
