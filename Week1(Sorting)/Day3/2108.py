@@ -1,32 +1,19 @@
+import sys
+from collections import Counter
+
 N = int(input())
-sum = 0
-temp = 0
-count = 0
-input_list = list()
-saving_list = [0] * 8001
+li = list()
 
 for i in range(N):
-    temp = int(input())
-    sum += temp
-    input_list.append(temp)
-    saving_list[temp+4000] += 1
+    li.append(int(sys.stdin.readline()))
 
-input_list.sort()
-print(round(sum/N))
-print(input_list[N//2])
+li.sort()
+count = Counter(li).most_common(2)
 
-m = max(saving_list)
-sum = -4001
-temp = 0
-for i in saving_list:
-    sum += 1
-    if i == m:
-        count += 1
-        if count == 2:
-            temp = sum
-            break
-        else:
-            temp = sum
-
-print(temp)
-print(input_list[N-1]-input_list[0])
+print(round(sum(li)/N))
+print(li[N//2])
+if len(count) > 1 and count[0][1] == count[1][1]:
+    print(count[1][0])
+else:
+    print(count[0][0])
+print(li[N-1]-li[0])
