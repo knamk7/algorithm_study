@@ -1,7 +1,9 @@
-T = int(input())
+import sys
+
+T = int(sys.stdin.readline().strip())
 string = list()
 for i in range(T):
-    string.append(list(input()))
+    string.append(list(sys.stdin.readline().strip()))
 for i in string:
     a = 0
     for j in range(len(i)):
@@ -9,9 +11,7 @@ for i in string:
         if temp == ')': a += 1
         else: a -= 1
         if a < 0: break
-    if a < 0:
-        print('NO')
-    elif a == 0:
+    if a == 0:
         print('YES')
-    elif a != 0:
+    else:
         print('NO')
