@@ -11,6 +11,7 @@ for i in range(123, 988):
     else:
         candidates.add(i)
 temp = candidates
+
 # for i in range(1,10):
 #     for j in range(1,10):
 #         if j != i:
@@ -26,7 +27,7 @@ for i in range(N):
     answers.append(input().split())
 
 numbers = {'1','2','3','4','5','6','7','8','9'}
-
+''''''
 for i in answers:
     if i[1] == '3':                     #3S
         candidates = {i[0]}
