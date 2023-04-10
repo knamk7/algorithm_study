@@ -27,7 +27,7 @@ for i in range(N):
     answers.append(input().split())
 
 numbers = {'1','2','3','4','5','6','7','8','9'}
-''''''
+
 for i in answers:
     if i[1] == '3':                     #3S
         candidates = {i[0]}
