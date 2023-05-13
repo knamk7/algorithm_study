@@ -7,25 +7,19 @@ import sys
 
 N = int(input())
 target = list()
-stack = [1]
+stack = []
 result = list()
 
 for i in range(N):
     target.append(int(sys.stdin.readline().strip()))
 
-n = 2
-i = 0
-
-while(1):
-    if stack[-1] == target[i]:
-        stack.pop()
-        result.append('-')
-        i += 1
-    elif N >= n and stack[-1] != target[i]:
-        stack.append(n)
+temp = 1
+for i in target:
+    stack.append(temp)
+    while i > stack[-1]:
+        temp += 1
+        stack.append(temp)
         result.append('+')
-    else:
-        print('NO')
 
 for i in result:
-    print(i, end=' ')
+    print(i)
